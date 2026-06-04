@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Челябинск — город возможностей и развития</title>
+
+<meta name="description"
+      content="Официальный информационный портал города Челябинска. Экономика, инвестиции, инфраструктура, цифровые сервисы и развитие городской среды.">
+
+<meta property="og:title" content="Челябинск — город возможностей и развития">
+<meta property="og:description" content="Современный городской портал Челябинска">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<style>
+
+:root{
+    --primary:#0A3D62;
+    --secondary:#1E88E5;
+    --accent:#F9A826;
+    --dark:#071827;
+    --light:#F5F8FC;
+    --white:#FFFFFF;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter, Arial, sans-serif;
+    color:#1c1c1c;
+    background:#fff;
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(7,24,39,.75);
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-weight:500;
+}
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(5,15,30,.7), rgba(5,15,30,.8)),
+    url("https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2000");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:750px;
+}
+
+.hero h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    opacity:.9;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--accent);
+    color:#000;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.stats{
+    margin-top:-80px;
+    position:relative;
+    z-index:10;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.stat-card{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.stat-number{
+    font-size:42px;
+    color:var(--secondary);
+    font-weight:700;
+}
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:15px;
+    color:var(--dark);
+}
+
+.section-subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:60px;
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.feature-card{
+    background:var(--light);
+    padding:35px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+.feature-icon{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.projects{
+    background:#f8fafc;
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.project-card{
+    background:white;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.project-image{
+    height:240px;
+    background:linear-gradient(135deg,#1E88E5,#0A3D62);
+}
+
+.project-content{
+    padding:30px;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid #e5e5e5;
+    border-radius:18px;
+    padding:30px;
+transition:.3s;
+}
+
+.service-card:hover{
+    background:var(--secondary);
+    color:white;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.news-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.news-image{
+    height:200px;
+    background:linear-gradient(135deg,#0A3D62,#1E88E5);
+}
+
+.news-content{
+    padding:25px;
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    padding:60px 0;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-title{
+    margin-bottom:20px;
+}
+
+@media(max-width:992px){
+
+.hero h1{
+    font-size:52px;
+}
+
+.stats-grid,
+.features-grid,
+.project-grid,
+.services-grid,
+.news-grid,
+.footer-grid{
+    grid-template-columns:1fr;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">Челябинск</div>
+
+<div class="nav-links">
+<a href="#about">О городе</a>
+<a href="#projects">Проекты</a>
+<a href="#services">Сервисы</a>
+<a href="#news">Новости</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<h1>
+Челябинск —
+город технологий,
+промышленности
+и новых возможностей
+</h1>
+
+<p>
+Современный мегаполис Южного Урала,
+объединяющий промышленный потенциал,
+комфортную городскую среду и цифровое развитие.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#about" class="btn btn-primary">
+Узнать больше
+</a>
+
+<a href="#services" class="btn btn-outline">
+Сервисы
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-number counter" data-target="1180">0</div>
+<div>тыс. жителей</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-number counter" data-target="530">0</div>
+<div>км² территории</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-number counter" data-target="1736">0</div>
+<div>год основания</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-number counter" data-target="5000">0</div>
+<div>предприятий</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<div class="container">
+
+<h2 class="section-title">
+Почему Челябинск
+</h2>
+
+<p class="section-subtitle">
+Крупнейший промышленный и логистический центр Южного Урала
+</p>
+
+<div class="features-grid">
+
+<div class="feature-card">
+<div class="feature-icon">🏭</div>
+<h3>Промышленность</h3>
+<p>
+Один из крупнейших индустриальных центров страны.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🚄 </div>
+<h3>Транспорт</h3>
+<p>
+Развитая железнодорожная и автомобильная инфраструктура.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">💻</div>
+<h3>Цифровизация</h3>
+<p>
+Развитие электронных сервисов и цифрового управления.
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🌳 </div>
+<h3>Комфортная среда</h3>
+<p>
+Современные парки, скверы и общественные пространства.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="projects">
+
+<div class="container">
+
+<h2 class="section-title">
+Приоритетные проекты
+</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<div class="project-image"></div>
+<div class="project-content">
+<h3>Экологическая модернизация</h3>
+<p>
+Комплекс мероприятий по улучшению экологической ситуации.
+</p>
+</div>
+</div>
+
+<div class="project-card">
+<div class="project-image"></div>
+<div class="project-content">
+<h3>Умный город</h3>
+<p>
+Развитие цифровых сервисов и городской инфраструктуры.
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="services">
+
+<div class="container">
+
+<h2 class="section-title">
+Цифровые сервисы
+</h2>
+
+<div class="services-grid">
+
+<div class="service-card">
+<h3>Обращение граждан</h3>
+</div>
+
+<div class="service-card">
+<h3>Запись на прием</h3>
+</div>
+
+<div class="service-card">
+<h3>Открытые данные</h3>
+</div>
+
+<div class="service-card">
+<h3>Госуслуги</h3>
+</div>
+
+<div class="service-card">
+<h3>Инвестиционный портал</h3>
+</div>
+
+<div class="service-card">
+<h3>Электронные услуги</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="news">
+
+<div class="container">
+
+<h2 class="section-title">
+Новости города
+</h2>
+
+<div class="news-grid">
+
+<div class="news-card">
+<div class="news-image"></div>
+<div class="news-content">
+<h3>Благоустройство общественных пространств</h3>
+<p>Продолжается развитие городской среды.</p>
+</div>
+</div>
+
+<div class="news-card">
+<div class="news-image"></div>
+<div class="news-content">
+<h3>Новые инвестиционные проекты</h3>
+<p>Поддержка бизнеса и создание рабочих мест.</p>
+</div>
+</div>
+
+<div class="news-card">
+<div class="news-image"></div>
+<div class="news-content">
+<h3>Развитие цифровых сервисов</h3>
+<p>Расширение возможностей электронного взаимодействия.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3 class="footer-title">Челябинск</h3>
+<p>
+Современный городской портал муниципального образования.
+</p>
+</div>
+
+<div>
+<h3 class="footer-title">Разделы</h3>
+<p>О городе</p>
+<p>Проекты</p>
+<p>Новости</p>
+</div>
+
+<div>
+<h3 class="footer-title">Контакты</h3>
+<p>Администрация города</p>
+<p>+7 (351) XXX-XX-XX</p>
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+
+const target = +counter.dataset.target;
+
+let count = 0;
+
+const update = () => {
+
+const increment = target / 80;
+
+if(count < target){
+
+count += increment;
+counter.innerText = Math.ceil(count);
+
+requestAnimationFrame(update);
+
+}else{
+
+counter.innerText = target;
+
+}
+};
+
+update();
+
+});
+
+</script>
+
+</body>
+</html>
