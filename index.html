@@ -4,292 +4,343 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Челябинск — город возможностей и развития</title>
+<title>Челябинск — город технологий и новых возможностей</title>
 
 <meta name="description"
-      content="Официальный информационный портал города Челябинска. Экономика, инвестиции, инфраструктура, цифровые сервисы и развитие городской среды.">
+content="Челябинск — современный мегаполис Южного Урала. Инвестиции, цифровые сервисы, комфортная среда и развитие города.">
 
-<meta property="og:title" content="Челябинск — город возможностей и развития">
-<meta property="og:description" content="Современный городской портал Челябинска">
-<meta property="og:type" content="website">
+<meta property="og:title"
+content="Челябинск — город технологий и новых возможностей">
+
+<meta property="og:description"
+content="Официальный городской портал">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 
 :root{
-    --primary:#0A3D62;
-    --secondary:#1E88E5;
-    --accent:#F9A826;
-    --dark:#071827;
-    --light:#F5F8FC;
-    --white:#FFFFFF;
+--primary:#0A3D62;
+--secondary:#1E88E5;
+--accent:#FFC857;
+--dark:#071827;
+--light:#F5F8FC;
+--white:#ffffff;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family:Inter, Arial, sans-serif;
-    color:#1c1c1c;
-    background:#fff;
-    line-height:1.6;
+font-family:'Inter',sans-serif;
+background:#fff;
+color:#222;
+overflow-x:hidden;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 .container{
-    width:min(1200px,90%);
-    margin:auto;
+width:min(1280px,90%);
+margin:auto;
 }
 
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    backdrop-filter:blur(15px);
-    background:rgba(7,24,39,.75);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999;
+background:rgba(5,15,30,.7);
+backdrop-filter:blur(15px);
 }
 
-.nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 0;
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
 }
 
 .logo{
-    color:white;
-    font-size:24px;
-    font-weight:700;
+font-size:28px;
+font-weight:800;
+color:white;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
+.nav-menu{
+display:flex;
+gap:35px;
 }
 
-.nav-links a{
-    text-decoration:none;
-    color:white;
-    font-weight:500;
+.nav-menu a{
+color:white;
+text-decoration:none;
+font-weight:500;
 }
 
 .hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(5,15,30,.7), rgba(5,15,30,.8)),
-    url("https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2000");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    color:white;
+height:100vh;
+position:relative;
+overflow:hidden;
+}
+
+.hero video{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+rgba(7,24,39,.55),
+rgba(7,24,39,.85)
+);
 }
 
 .hero-content{
-    max-width:750px;
+position:relative;
+z-index:2;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+max-width:850px;
+color:white;
 }
 
 .hero h1{
-    font-size:72px;
-    line-height:1.1;
-    margin-bottom:25px;
+font-size:78px;
+line-height:1;
+margin-bottom:25px;
+font-weight:800;
 }
 
 .hero p{
-    font-size:22px;
-    opacity:.9;
-    margin-bottom:35px;
+font-size:24px;
+margin-bottom:40px;
+opacity:.9;
 }
 
 .hero-buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-    padding:16px 28px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
+padding:18px 34px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
 }
 
 .btn-primary{
-    background:var(--accent);
-    color:#000;
+background:var(--accent);
+color:black;
 }
 
-.btn-primary:hover{
-    transform:translateY(-3px);
+.btn-secondary{
+border:2px solid white;
+color:white;
 }
 
-.btn-outline{
-    border:2px solid white;
-    color:white;
+.btn:hover{
+transform:translateY(-4px);
 }
 
 .stats{
-    margin-top:-80px;
-    position:relative;
-    z-index:10;
+margin-top:-90px;
+position:relative;
+z-index:10;
 }
 
 .stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 }
 
 .stat-card{
-    background:white;
-    border-radius:20px;
-    padding:35px;
-    text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+background:white;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
-.stat-number{
-    font-size:42px;
-    color:var(--secondary);
-    font-weight:700;
+.counter{
+font-size:48px;
+font-weight:800;
+color:var(--secondary);
 }
 
 section{
-    padding:100px 0;
+padding:120px 0;
 }
 
 .section-title{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:15px;
-    color:var(--dark);
+font-size:52px;
+text-align:center;
+margin-bottom:20px;
+color:var(--dark);
 }
 
 .section-subtitle{
-    text-align:center;
-    color:#666;
-    margin-bottom:60px;
+text-align:center;
+color:#666;
+margin-bottom:70px;
+}
+
+.features{
+background:#fff;
 }
 
 .features-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 }
 
 .feature-card{
-    background:var(--light);
-    padding:35px;
-    border-radius:20px;
-    transition:.3s;
+padding:35px;
+background:var(--light);
+border-radius:25px;
+transition:.4s;
 }
 
 .feature-card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
 }
 
 .feature-icon{
-    font-size:42px;
-    margin-bottom:20px;
+font-size:48px;
+margin-bottom:20px;
+}
+
+.feature-card h3{
+margin-bottom:15px;
 }
 
 .projects{
-    background:#f8fafc;
+background:#f8fafc;
 }
 
 .project-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:35px;
 }
 
 .project-card{
-    background:white;
-    border-radius:24px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+transition:.4s;
 }
 
-.project-image{
-    height:240px;
-    background:linear-gradient(135deg,#1E88E5,#0A3D62);
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-card img{
+width:100%;
+height:340px;
+object-fit:cover;
+display:block;
 }
 
 .project-content{
-    padding:30px;
+padding:35px;
+}
+
+.project-content h3{
+font-size:30px;
+margin-bottom:15px;
 }
 
 .services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .service-card{
-    background:white;
-    border:1px solid #e5e5e5;
-    border-radius:18px;
-    padding:30px;
+padding:35px;
+border-radius:20px;
+background:white;
+border:1px solid #e5e5e5;
 transition:.3s;
 }
 
 .service-card:hover{
-    background:var(--secondary);
-    color:white;
+background:var(--secondary);
+color:white;
 }
-
 .news-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .news-card{
-    background:white;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.06);
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .news-image{
-    height:200px;
-    background:linear-gradient(135deg,#0A3D62,#1E88E5);
+height:220px;
+background:
+linear-gradient(
+135deg,
+#0A3D62,
+#1E88E5
+);
 }
 
 .news-content{
-    padding:25px;
+padding:25px;
 }
 
 footer{
-    background:var(--dark);
-    color:white;
-    padding:60px 0;
+background:var(--dark);
+color:white;
+padding:80px 0;
 }
 
 .footer-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
 }
 
 .footer-title{
-    margin-bottom:20px;
+margin-bottom:20px;
 }
 
-@media(max-width:992px){
+max-width:1100px{
 
 .hero h1{
-    font-size:52px;
+font-size:58px;
 }
 
 .stats-grid,
@@ -298,8 +349,73 @@ footer{
 .services-grid,
 .news-grid,
 .footer-grid{
-    grid-template-columns:1fr;
+grid-template-columns:1fr;
 }
+
+/* =====================================
+   NEWS SECTION
+===================================== */
+
+#news {
+    background: #f8fafc;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    transition: .35s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ЭТОТ КЛАСС ДЕЛАЕТ ФОТКИ НОРМАЛЬНОГО РАЗМЕРА */
+.news-photo {
+    width: 100%;
+    height: 180px; /* Жестко фиксируем высоту, чтобы не были гигантскими */
+    display: block;
+    object-fit: cover; /* Обрезает лишнее, сохраняя пропорции, не сплющивая фото */
+    object-position: center;
+}
+
+.news-content {
+    padding: 24px;
+    flex: 1;
+}
+
+.news-tag {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background: #EAF4FF;
+    color: #1E88E5;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* ИСПРАВЛЕНИЕ: добавлен @media, теперь адаптив работает корректно и не ломает код */
+max-width: 768px {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    .news-photo {
+        height: 180px;
+    }
+}
+
+.nav-menu{
+display:none;
+}
+
 }
 
 </style>
@@ -308,48 +424,51 @@ footer{
 <body>
 
 <header>
-<div class="container nav">
-<div class="logo">Челябинск</div>
+<div class="container navbar">
 
-<div class="nav-links">
+<div class="logo">
+Челябинск
+</div>
+
+<nav class="nav-menu">
 <a href="#about">О городе</a>
 <a href="#projects">Проекты</a>
 <a href="#services">Сервисы</a>
 <a href="#news">Новости</a>
-</div>
+</nav>
+
 </div>
 </header>
 
 <section class="hero">
 
-<div class="container">
+<video autoplay muted loop playsinline>
+<source src="video/chelyabinsk-future.mp4" type="video/mp4">
+</video>
 
-<div class="hero-content">
+<div class="container hero-content">
 
 <h1>
 Челябинск —
-город технологий,
-промышленности
+город технологий
 и новых возможностей
 </h1>
 
 <p>
 Современный мегаполис Южного Урала,
-объединяющий промышленный потенциал,
-комфортную городскую среду и цифровое развитие.
+где промышленность, инновации и комфортная
+городская среда формируют будущее.
 </p>
 
 <div class="hero-buttons">
 
 <a href="#about" class="btn btn-primary">
-Узнать больше
+О городе
 </a>
 
-<a href="#services" class="btn btn-outline">
-Сервисы
+<a href="#projects" class="btn btn-secondary">
+Проекты развития
 </a>
-
-</div>
 
 </div>
 
@@ -364,23 +483,23 @@ footer{
 <div class="stats-grid">
 
 <div class="stat-card">
-<div class="stat-number counter" data-target="1180">0</div>
-<div>тыс. жителей</div>
+<div class="counter" data-target="1180">0</div>
+<p>тыс. жителей</p>
 </div>
 
 <div class="stat-card">
-<div class="stat-number counter" data-target="530">0</div>
-<div>км² территории</div>
+<div class="counter" data-target="530">0</div>
+<p>км² территории</p>
 </div>
 
 <div class="stat-card">
-<div class="stat-number counter" data-target="1736">0</div>
-<div>год основания</div>
+<div class="counter" data-target="1736">0</div>
+<p>год основания</p>
 </div>
 
 <div class="stat-card">
-<div class="stat-number counter" data-target="5000">0</div>
-<div>предприятий</div>
+<div class="counter" data-target="5000">0</div>
+<p>предприятий</p>
 </div>
 
 </div>
@@ -398,41 +517,34 @@ footer{
 </h2>
 
 <p class="section-subtitle">
-Крупнейший промышленный и логистический центр Южного Урала
+Один из крупнейших центров промышленности,
+инноваций и логистики России
 </p>
 
 <div class="features-grid">
 
 <div class="feature-card">
 <div class="feature-icon">🏭</div>
-<h3>Промышленность</h3>
-<p>
-Один из крупнейших индустриальных центров страны.
-</p>
+<h3>Промышленный потенциал</h3>
+<p>Современные производства и индустриальные площадки.</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon">🚄 </div>
+<div class="feature-icon">🚆</div>
 <h3>Транспорт</h3>
-<p>
-Развитая железнодорожная и автомобильная инфраструктура.
-</p>
+<p>Крупный транспортный узел федерального значения.</p>
 </div>
 
 <div class="feature-card">
 <div class="feature-icon">💻</div>
 <h3>Цифровизация</h3>
-<p>
-Развитие электронных сервисов и цифрового управления.
-</p>
+<p>Развитие электронных сервисов и технологий управления.</p>
 </div>
 
 <div class="feature-card">
-<div class="feature-icon">🌳 </div>
+<div class="feature-icon">🌳</div>
 <h3>Комфортная среда</h3>
-<p>
-Современные парки, скверы и общественные пространства.
-</p>
+<p>Парки, общественные пространства и благоустройство.</p>
 </div>
 
 </div>
@@ -441,7 +553,7 @@ footer{
 
 </section>
 
-<section id="projects" class="projects">
+<section class="projects" id="projects">
 
 <div class="container">
 
@@ -452,23 +564,40 @@ footer{
 <div class="project-grid">
 
 <div class="project-card">
-<div class="project-image"></div>
+
+<img src="images/eco-modernization.jpg"
+alt="Экологическая модернизация">
+
 <div class="project-content">
+
 <h3>Экологическая модернизация</h3>
+
 <p>
-Комплекс мероприятий по улучшению экологической ситуации.
+Внедрение экологически чистых технологий,
+развитие зелёной энергетики и улучшение городской среды.
 </p>
+
 </div>
+
 </div>
 
 <div class="project-card">
-<div class="project-image"></div>
+
+<img src="images/smart-city.jpg"
+alt="Умный город">
+
 <div class="project-content">
+
 <h3>Умный город</h3>
+
 <p>
-Развитие цифровых сервисов и городской инфраструктуры.
+Цифровая инфраструктура,
+интеллектуальный транспорт,
+умное освещение и современные сервисы.
 </p>
+
 </div>
+
 </div>
 
 </div>
@@ -492,11 +621,7 @@ footer{
 </div>
 
 <div class="service-card">
-<h3>Запись на прием</h3>
-</div>
-
-<div class="service-card">
-<h3>Открытые данные</h3>
+<h3>Запись на приём</h3>
 </div>
 
 <div class="service-card">
@@ -504,6 +629,13 @@ footer{
 </div>
 
 <div class="service-card">
+<h3>Открытые данные</h3>
+</div>
+
+<div class="service-card"
+
+
+>
 <h3>Инвестиционный портал</h3>
 </div>
 
@@ -525,30 +657,88 @@ footer{
 Новости города
 </h2>
 
+<p class="section-subtitle">
+Актуальные события и развитие городской среды
+</p>
+
 <div class="news-grid">
 
 <div class="news-card">
-<div class="news-image"></div>
+
+<img
+src="images/blagoustroystvo.jpg"
+alt="Благоустройство территорий"
+class="news-photo">
+
 <div class="news-content">
-<h3>Благоустройство общественных пространств</h3>
-<p>Продолжается развитие городской среды.</p>
+
+<span class="news-tag">
+Городская среда
+</span>
+
+<h3>
+Благоустройство территорий
+</h3>
+
+<p>
+Продолжается обновление парков,
+скверов и общественных пространств города.
+</p>
+
 </div>
+
 </div>
 
 <div class="news-card">
-<div class="news-image"></div>
+
+<img
+src="images/investments.jpg"
+alt="Новые инвестиции"
+class="news-photo">
+
 <div class="news-content">
-<h3>Новые инвестиционные проекты</h3>
-<p>Поддержка бизнеса и создание рабочих мест.</p>
+
+<span class="news-tag">
+Экономика
+</span>
+
+<h3>
+Новые инвестиции
+</h3>
+
+<p>
+Запуск современных строительных
+и производственных проектов.
+</p>
+
 </div>
+
 </div>
 
 <div class="news-card">
-<div class="news-image"></div>
+
+<img
+src="images/digital-city.jpg"
+alt="Цифровой муниципалитет"
+class="news-photo">
+
 <div class="news-content">
-<h3>Развитие цифровых сервисов</h3>
-<p>Расширение возможностей электронного взаимодействия.</p>
+
+<span class="news-tag">
+Цифровизация
+</span>
+
+<h3>
+Цифровой муниципалитет
+</h3>
+
+<p>
+Развитие электронных сервисов
+и интеллектуальной городской инфраструктуры.
+</p>
+
 </div>
+
 </div>
 
 </div>
@@ -564,23 +754,38 @@ footer{
 <div class="footer-grid">
 
 <div>
-<h3 class="footer-title">Челябинск</h3>
+
+<h3 class="footer-title">
+Челябинск
+</h3>
+
 <p>
 Современный городской портал муниципального образования.
 </p>
+
 </div>
 
 <div>
-<h3 class="footer-title">Разделы</h3>
+
+<h3 class="footer-title">
+Разделы
+</h3>
+
 <p>О городе</p>
 <p>Проекты</p>
-<p>Новости</p>
+<p>Сервисы</p>
+
 </div>
 
 <div>
-<h3 class="footer-title">Контакты</h3>
-<p>Администрация города</p>
+
+<h3 class="footer-title">
+Контакты
+</h3>
+
+<p>Администрация города Челябинска</p>
 <p>+7 (351) XXX-XX-XX</p>
+
 </div>
 
 </div>
@@ -591,22 +796,21 @@ footer{
 
 <script>
 
-const counters = document.querySelectorAll('.counter');
-
-counters.forEach(counter => {
+document.querySelectorAll('.counter').forEach(counter => {
 
 const target = +counter.dataset.target;
 
-let count = 0;
+let current = 0;
 
 const update = () => {
 
-const increment = target / 80;
+const increment = target / 100;
 
-if(count < target){
+if(current < target){
 
-count += increment;
-counter.innerText = Math.ceil(count);
+current += increment;
+
+counter.innerText = Math.ceil(current);
 
 requestAnimationFrame(update);
 
