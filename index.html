@@ -7,13 +7,7 @@
 <title>Челябинск — город технологий и новых возможностей</title>
 
 <meta name="description"
-content="Челябинск — современный мегаполис Южного Урала. Инвестиции, цифровые сервисы, комфортная среда и развитие города.">
-
-<meta property="og:title"
-content="Челябинск — город технологий и новых возможностей">
-
-<meta property="og:description"
-content="Официальный городской портал">
+content="Челябинск — современный мегаполис Южного Урала.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,6 +31,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 font-family:'Inter',sans-serif;
 background:#fff;
@@ -44,14 +42,12 @@ color:#222;
 overflow-x:hidden;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 .container{
 width:min(1280px,90%);
 margin:auto;
 }
+
+/* ================= HEADER ================= */
 
 header{
 position:fixed;
@@ -86,6 +82,8 @@ color:white;
 text-decoration:none;
 font-weight:500;
 }
+
+/* ================= HERO ================= */
 
 .hero{
 height:100vh;
@@ -165,6 +163,8 @@ color:white;
 transform:translateY(-4px);
 }
 
+/* ================= STATS ================= */
+
 .stats{
 margin-top:-90px;
 position:relative;
@@ -191,6 +191,8 @@ font-weight:800;
 color:var(--secondary);
 }
 
+/* ================= COMMON ================= */
+
 section{
 padding:120px 0;
 }
@@ -208,9 +210,7 @@ color:#666;
 margin-bottom:70px;
 }
 
-.features{
-background:#fff;
-}
+/* ================= FEATURES ================= */
 
 .features-grid{
 display:grid;
@@ -237,6 +237,8 @@ margin-bottom:20px;
 .feature-card h3{
 margin-bottom:15px;
 }
+
+/* ================= PROJECTS ================= */
 
 .projects{
 background:#f8fafc;
@@ -276,6 +278,8 @@ font-size:30px;
 margin-bottom:15px;
 }
 
+/* ================= SERVICES ================= */
+
 .services-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -294,6 +298,13 @@ transition:.3s;
 background:var(--secondary);
 color:white;
 }
+
+/* ================= NEWS ================= */
+
+#news{
+background:#f8fafc;
+}
+
 .news-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -307,19 +318,29 @@ overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
-.news-image{
+.news-photo{
+width:100%;
 height:220px;
-background:
-linear-gradient(
-135deg,
-#0A3D62,
-#1E88E5
-);
+object-fit:cover;
+display:block;
 }
 
 .news-content{
 padding:25px;
 }
+
+.news-tag{
+display:inline-block;
+padding:8px 14px;
+border-radius:30px;
+background:#EAF4FF;
+color:#1E88E5;
+font-size:13px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+/* ================= FOOTER ================= */
 
 footer{
 background:var(--dark);
@@ -337,6 +358,8 @@ gap:40px;
 margin-bottom:20px;
 }
 
+/* ================= ADAPTIVE ================= */
+
 @media (max-width:1100px){
 
 .hero h1{
@@ -352,68 +375,24 @@ font-size:58px;
 grid-template-columns:1fr;
 }
 
-/* =====================================
-   NEWS SECTION
-===================================== */
-
-#news {
-    background: #f8fafc;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-    margin-top: 50px;
-}
-
-.news-card {
-    background: #fff;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 12px 35px rgba(0,0,0,.08);
-    transition: .35s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ЭТОТ КЛАСС ДЕЛАЕТ ФОТКИ НОРМАЛЬНОГО РАЗМЕРА */
-.news-photo {
-    width: 100%;
-    height: 180px; /* Жестко фиксируем высоту, чтобы не были гигантскими */
-    display: block;
-    object-fit: cover; /* Обрезает лишнее, сохраняя пропорции, не сплющивая фото */
-    object-position: center;
-}
-
-.news-content {
-    padding: 24px;
-    flex: 1;
-}
-
-.news-tag {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 30px;
-    background: #EAF4FF;
-    color: #1E88E5;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-/* ИСПРАВЛЕНИЕ: добавлен @media, теперь адаптив работает корректно и не ломает код */
-@media (max-width: 768px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-    .news-photo {
-        height: 180px;
-    }
-}
-
 .nav-menu{
 display:none;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.news-photo{
+height:180px;
 }
 
 }
@@ -424,6 +403,7 @@ display:none;
 <body>
 
 <header>
+
 <div class="container navbar">
 
 <div class="logo">
@@ -438,6 +418,7 @@ display:none;
 </nav>
 
 </div>
+
 </header>
 
 <section class="hero">
@@ -632,10 +613,7 @@ alt="Умный город">
 <h3>Открытые данные</h3>
 </div>
 
-<div class="service-card"
-
-
->
+<div class="service-card">
 <h3>Инвестиционный портал</h3>
 </div>
 
@@ -667,7 +645,7 @@ alt="Умный город">
 
 <img
 src="blagoustroystvo.jpg"
-alt="Благоустройство территорий"
+alt="Благоустройство"
 class="news-photo">
 
 <div class="news-content">
@@ -693,7 +671,7 @@ class="news-photo">
 
 <img
 src="investments.jpg"
-alt="Новые инвестиции"
+alt="Инвестиции"
 class="news-photo">
 
 <div class="news-content">
@@ -819,6 +797,7 @@ requestAnimationFrame(update);
 counter.innerText = target;
 
 }
+
 };
 
 update();
