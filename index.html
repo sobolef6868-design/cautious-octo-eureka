@@ -1,330 +1,371 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Челябинск — город технологий</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Челябинск — город технологий</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1f3f6;
-            color: #222;
-        }
+body{
+    background:#f3f4f6;
+    color:#111827;
+}
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-        }
+header{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+}
 
-        header {
-            background: linear-gradient(180deg, #1f2937, #334155);
-            color: white;
-            padding: 20px 0 80px;
-        }
+header video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-        }
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
 
-        .logo {
-            font-size: 34px;
-            font-weight: bold;
-        }
+.header-content{
+    position:relative;
+    z-index:2;
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+    color:white;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:120px;
+}
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
+.logo{
+    font-size:42px;
+    font-weight:bold;
+}
 
-        .hero {
-            max-width: 700px;
-        }
+.nav-links{
+    display:flex;
+    gap:30px;
+}
 
-        .hero h1 {
-            font-size: 64px;
-            line-height: 1.1;
-            margin-bottom: 25px;
-        }
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+}
 
-        .hero p {
-            font-size: 24px;
-            line-height: 1.5;
-            margin-bottom: 40px;
-            color: #dbe4ee;
-        }
+.hero{
+    max-width:650px;
+}
 
-        .buttons {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+.hero h1{
+    font-size:78px;
+    line-height:1;
+    margin-bottom:30px;
+}
 
-        .btn {
-            padding: 16px 34px;
-            border-radius: 50px;
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.hero p{
+    font-size:28px;
+    line-height:1.5;
+    margin-bottom:40px;
+}
 
-        .btn-primary {
-            background: #f5c451;
-            color: black;
-        }
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-        }
+.btn{
+    padding:18px 38px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
+.btn-primary{
+    background:#f5c451;
+    color:black;
+}
 
-        .btn-secondary:hover {
-            background: white;
-            color: black;
-        }
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
 
-        section {
-            padding: 100px 0;
-        }
+.btn:hover{
+    transform:translateY(-4px);
+}
 
-        .section-title {
-            text-align: center;
-            font-size: 54px;
-            margin-bottom: 60px;
-        }
+section{
+    padding:100px 40px;
+}
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
+.section-title{
+    text-align:center;
+    font-size:64px;
+    margin-bottom:70px;
+}
 
-        .project-card {
-            background: white;
-            border-radius: 30px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+    max-width:1400px;
+    margin:auto;
+}
 
-        .project-card:hover {
-            transform: translateY(-8px);
-        }
+.project-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
 
-        .project-card img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-        }
+.project-card:hover{
+    transform:translateY(-10px);
+}
 
-        .project-content {
-            padding: 30px;
-        }
+.project-card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    display:block;
+}
 
-        .project-content h3 {
-            font-size: 34px;
-            margin-bottom: 18px;
-        }
+.project-content{
+    padding:35px;
+}
 
-        .project-content p {
-            font-size: 20px;
-            line-height: 1.5;
-            color: #555;
-        }
+.project-content h3{
+    font-size:36px;
+    margin-bottom:20px;
+}
 
-        footer {
-            background: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            font-size: 18px;
-        }
+.project-content p{
+    font-size:21px;
+    line-height:1.6;
+    color:#4b5563;
+}
 
-        @media (max-width: 768px) {
+.about-box{
+    max-width:1200px;
+    margin:auto;
+    background:white;
+    border-radius:30px;
+    padding:60px;
+    font-size:24px;
+    line-height:1.7;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
 
-            .hero h1 {
-                font-size: 42px;
-            }
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:40px;
+    font-size:18px;
+}
 
-            .hero p {
-                font-size: 20px;
-            }
+@media(max-width:768px){
 
-            .section-title {
-                font-size: 40px;
-            }
+    .hero h1{
+        font-size:52px;
+    }
 
-            .project-content h3 {
-                font-size: 28px;
-            }
+    .hero p{
+        font-size:22px;
+    }
 
-            .project-content p {
-                font-size: 18px;
-            }
+    .section-title{
+        font-size:42px;
+    }
 
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    .project-content h3{
+        font-size:30px;
+    }
+
+    .project-content p{
+        font-size:18px;
+    }
+
+    nav{
+        margin-bottom:80px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    section{
+        padding:70px 20px;
+    }
+
+    .about-box{
+        padding:35px;
+        font-size:20px;
+    }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <div class="container">
 
-        <nav>
-            <div class="logo">Челябинск</div>
+<video autoplay muted loop playsinline>
+    <source src="./video/chelyabinsk-future.mp4" type="video/mp4">
+</video>
 
-            <div class="nav-links">
-                <a href="#projects">Проекты</a>
-                <a href="#about">О городе</a>
-            </div>
-        </nav>
+<div class="overlay"></div>
 
-        <div class="hero">
-            <h1>Челябинск — город технологий и новых возможностей</h1>
+<div class="header-content">
 
-            <p>
-                Современный мегаполис Южного Урала,
-                где промышленность, инновации и комфортная городская среда
-                формируют будущее.
-            </p>
+<nav>
+    <div class="logo">Челябинск</div>
 
-            <div class="buttons">
-                <a href="#about" class="btn btn-primary">О городе</a>
-                <a href="#projects" class="btn btn-secondary">Проекты развития</a>
-            </div>
-        </div>
-
+    <div class="nav-links">
+        <a href="#projects">Проекты</a>
+        <a href="#about">О городе</a>
     </div>
+</nav>
+
+<div class="hero">
+    <h1>Челябинск — город технологий и новых возможностей</h1>
+
+    <p>
+        Современный мегаполис Южного Урала,
+        где промышленность, инновации
+        и комфортная городская среда
+        формируют будущее.
+    </p>
+
+    <div class="buttons">
+        <a href="#about" class="btn btn-primary">О городе</a>
+        <a href="#projects" class="btn btn-secondary">Проекты развития</a>
+    </div>
+</div>
+
+</div>
 </header>
 
-<section class="projects" id="projects">
-    <div class="container">
+<section id="projects">
 
-        <h2 class="section-title">Приоритетные проекты</h2>
+<h2 class="section-title">Приоритетные проекты</h2>
 
-        <div class="projects-grid">
+<div class="projects-grid">
 
-            <div class="project-card">
-                <img src="./images/eco-modernization.jpg" alt="Экологическая модернизация">
+    <div class="project-card">
+        <img src="./images/eco-modernization.jpg" alt="Экологическая модернизация">
 
-                <div class="project-content">
-                    <h3>Экологическая модернизация</h3>
+        <div class="project-content">
+            <h3>Экологическая модернизация</h3>
 
-                    <p>
-                        Внедрение экологически чистых технологий,
-                        развитие зелёной энергетики и улучшение городской среды.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="./images/smart-city.jpg" alt="Умный город">
-
-                <div class="project-content">
-                    <h3>Умный город</h3>
-
-                    <p>
-                        Цифровая инфраструктура,
-                        интеллектуальный транспорт,
-                        умное освещение и современные сервисы.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="./images/investments.jpg" alt="Инвестиции">
-
-                <div class="project-content">
-                    <h3>Инвестиции</h3>
-
-                    <p>
-                        Создание благоприятного инвестиционного климата
-                        и поддержка бизнеса.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="./images/digital-city.jpg" alt="Цифровой город">
-
-                <div class="project-content">
-                    <h3>Цифровой город</h3>
-
-                    <p>
-                        Развитие IT-инфраструктуры
-                        и внедрение цифровых технологий.
-                    </p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="./images/blagoustroystvo.jpg" alt="Благоустройство">
-
-                <div class="project-content">
-                    <h3>Благоустройство</h3>
-
-                    <p>
-                        Новые парки, современные общественные пространства
-                        и комфортная среда.
-                    </p>
-                </div>
-            </div>
-
+            <p>
+                Внедрение экологически чистых технологий,
+                развитие зелёной энергетики
+                и улучшение городской среды.
+            </p>
         </div>
     </div>
+
+    <div class="project-card">
+        <img src="./images/smart-city.jpg" alt="Умный город">
+
+        <div class="project-content">
+            <h3>Умный город</h3>
+
+            <p>
+                Цифровая инфраструктура,
+                интеллектуальный транспорт,
+                умное освещение и современные сервисы.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="./images/investments.jpg" alt="Инвестиции">
+
+        <div class="project-content">
+            <h3>Инвестиции</h3>
+
+            <p>
+                Создание благоприятного инвестиционного климата
+                и поддержка бизнеса.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="./images/digital-city.jpg" alt="Цифровой город">
+
+        <div class="project-content">
+            <h3>Цифровой город</h3>
+
+            <p>
+                Развитие IT-инфраструктуры
+                и внедрение цифровых технологий.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="./images/blagoustroystvo.jpg" alt="Благоустройство">
+
+        <div class="project-content">
+            <h3>Благоустройство</h3>
+
+            <p>
+                Новые парки,
+                современные общественные пространства
+                и комфортная среда.
+            </p>
+        </div>
+    </div>
+
+</div>
 </section>
 
 <section id="about">
-    <div class="container">
 
-        <h2 class="section-title">О городе</h2>
+<h2 class="section-title">О городе</h2>
 
-        <div style="
-            background:white;
-            border-radius:30px;
-            padding:50px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.08);
-            font-size:22px;
-            line-height:1.7;
-        ">
-            Челябинск — один из крупнейших промышленных,
-            научных и технологических центров России.
-            Город активно развивается, внедряя современные
-            цифровые технологии, улучшая экологию,
-            транспортную инфраструктуру и общественные пространства.
-        </div>
+<div class="about-box">
+    Челябинск — один из крупнейших промышленных,
+    научных и технологических центров России.
+    Город активно развивается,
+    внедряя современные цифровые технологии,
+    улучшая экологию, транспортную инфраструктуру
+    и общественные пространства.
+</div>
 
-    </div>
 </section>
 
 <footer>
-    © 2026 Челябинск — город технологий
+© 2026 Челябинск — город технологий
 </footer>
 
 </body>
