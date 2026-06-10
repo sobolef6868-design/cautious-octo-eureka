@@ -504,3 +504,8 @@ footer{
     grid-template-columns:1fr;
 }
 }
+
+/* Разделительные полосы между секциями */
+section + section{
+    border-top:1px solid #e5e7eb;
+}
