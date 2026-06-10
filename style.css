@@ -206,16 +206,23 @@ margin-right:8px;
 .stat-card{
     background:#fff;
     border-radius:24px;
-    padding:35px;
+    padding:40px 35px;
     text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 15px 40px rgba(37,99,235,0.12);
+    border:2px solid rgba(37,99,235,0.08);
+    transition:0.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(37,99,235,0.18);
 }
 
 .stat-number{
-    font-size:42px;
+    font-size:48px;
     font-weight:800;
     color:#2563eb;
-    margin-bottom:10px;
+    margin-bottom:14px;
 }
 
 .stat-text{
@@ -507,5 +514,5 @@ footer{
 
 /* Разделительные полосы между секциями */
 section + section{
-    border-top:1px solid #e5e7eb;
+    border-top:none;
 }
