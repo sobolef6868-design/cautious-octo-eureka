@@ -16,6 +16,10 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:Arial,sans-serif;
     background:#f5f7fb;
@@ -51,6 +55,11 @@ header{
     color:#fff;
     font-size:28px;
     font-weight:700;
+}
+.logo img{
+    height:60px;
+    width:auto;
+    display:block;
 }
 
 .menu{
@@ -197,6 +206,7 @@ header{
 
 section{
     padding:120px 0;
+    scroll-margin-top:90px;
 }
 
 .section-title{
@@ -455,13 +465,15 @@ footer{
 
 <header>
 <div class="container nav">
-<div class="logo">Челябинск</div>
+<div class="logo">
+    <img src="./images/logo-chelyabinsk.png" alt="Челябинск — город технологий">
+</div>
 
 <nav class="menu">
-<a href="#">О городе</a>
-<a href="#">Проекты</a>
-<a href="#">Сервисы</a>
-<a href="#">Новости</a>
+<a href="#about">О городе</a>
+<a href="#projects">Проекты</a>
+<a href="#services">Сервисы</a>
+<a href="#news">Новости</a>
 </nav>
 </div>
 </header>
@@ -542,7 +554,7 @@ z-index:2;
 </div>
 </section>
 
-<section>
+<section id="about">
 <div class="container">
 
 <h2 class="section-title">Почему Челябинск</h2>
@@ -590,7 +602,7 @@ z-index:2;
 </div>
 </section>
 
-<section class="projects">
+<section class="projects" id="projects">
 <div class="container">
 
 <h2 class="section-title">Приоритетные проекты</h2>
@@ -631,7 +643,7 @@ z-index:2;
 </div>
 </section>
 
-<section>
+<section id="services">
 <div class="container">
 
 <h2 class="section-title">Цифровые сервисы</h2>
@@ -649,7 +661,7 @@ z-index:2;
 </div>
 </section>
 
-<section class="news">
+<section class="news" id="news">
 <div class="container">
 
 <h2 class="section-title">Новости города</h2>
