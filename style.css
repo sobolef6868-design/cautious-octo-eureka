@@ -511,3 +511,22 @@ footer{
     grid-template-columns:1fr;
 }
 }
+
+
+/* FIX SERVICES BUTTONS */
+.service-card{
+    cursor:pointer;
+}
+
+.service-card a{
+    display:block;
+    width:100%;
+    height:100%;
+    color:inherit;
+    text-decoration:none;
+}
+
+.service-card:hover a{
+    color:#ffffff;
+    text-decoration:none;
+}
